@@ -1,0 +1,7 @@
+UTILISATEUR( id, email, mot de passe, nom, prénom, téléphone, id rôle )
+TYPE DE LOGEMENT( id, label )
+ADRESSE( id, ville, pays )
+EQUIPEMENT( id, label )
+HEBERGEMENT( id, prix, surface, description, couchages, #id_utilisateur_propriétaire, #id_type_logement, #id_adresse )
+HEBERGEMENT_EQUIPEMENT( #id_hébergement, #id_équipement )
+RESERVATION( id, #id_utilisateur_client, #id_hébergement, date de début, date de fin )
