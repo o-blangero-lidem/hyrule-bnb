@@ -16,9 +16,9 @@ class Database
     public static function getPDO(): PDO
     {
         if( is_null( self::$pdo_instance ) ) {
-            $dsn = sprintf( 'mysql:host=%s;dbname=%s', $_ENV['db_host'], $_ENV['db_name'] );
+            $dsn = sprintf( 'mysql:host=%s;dbname=%s', $_ENV['MYSQL_HOST'], $_ENV['MYSQL_DATABASE'] );
 
-            self::$pdo_instance = new PDO( $dsn, $_ENV['db_user'], $_ENV['db_pass'], self::PDO_OPTIONS );
+            self::$pdo_instance = new PDO( $dsn, $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD'], self::PDO_OPTIONS );
         }
         
         return self::$pdo_instance;

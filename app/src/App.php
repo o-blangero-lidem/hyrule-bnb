@@ -16,13 +16,8 @@ use MiladRahimi\PhpRouter\Routing\Attributes;
 use Symplefony\View;
 use Symplefony\Security;
 
-use App\Controller\AdminController;
 use App\Controller\AuthController;
-use App\Controller\CarController;
-use App\Controller\CategoryController;
 use App\Controller\PageController;
-use App\Controller\UserController;
-use App\Middleware\AdminMiddleware;
 use App\Middleware\AuthMiddleware;
 use App\Middleware\VisitorMiddleware;
 
@@ -53,7 +48,7 @@ final class App
      */
     public static function strHash( string $str ): string
     {
-        return Security::strButcher( $str, $_ENV['security_salt'], $_ENV['security_pepper']);
+        return Security::strButcher( $str, $_ENV['SECURITY_SALT'], $_ENV['SECURITY_PEPPER']);
     }
 
     // Démarrage de l'application
